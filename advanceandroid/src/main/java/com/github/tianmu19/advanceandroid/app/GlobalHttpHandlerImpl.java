@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.jess.arms.http.GlobalHttpHandler;
 
+import com.jess.arms.http.log.RequestInterceptor;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -40,6 +41,7 @@ public class GlobalHttpHandlerImpl implements GlobalHttpHandler {
         create a new request and modify it accordingly using the new token
         Request newRequest = chain.request().newBuilder().header("token", newToken)
                              .build();
+
 
         retry the request
 

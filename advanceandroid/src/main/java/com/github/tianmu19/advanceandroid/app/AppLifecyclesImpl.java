@@ -2,16 +2,16 @@ package com.github.tianmu19.advanceandroid.app;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.support.annotation.NonNull;
-
+import butterknife.ButterKnife;
+import com.github.tianmu19.advanceandroid.BuildConfig;
 import com.jess.arms.base.delegate.AppLifecycles;
 import com.jess.arms.integration.cache.IntelligentCache;
 import com.jess.arms.utils.ArmsUtils;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
-
-import butterknife.ButterKnife;
-import com.github.tianmu19.advanceandroid.BuildConfig;
 import timber.log.Timber;
 
 /**
@@ -58,6 +58,19 @@ public class AppLifecyclesImpl implements AppLifecycles {
         ArmsUtils.obtainAppComponentFromContext(application).extras()
                 .put(IntelligentCache.getKeyOfKeep(RefWatcher.class.getName())
                         , BuildConfig.USE_CANARY ? LeakCanary.install(application) : RefWatcher.DISABLED);
+
+        initTextSize(application);
+    }
+
+    /**
+     * 使其系统更改字体大小无效
+     * @param application
+     */
+    private void initTextSize(Application application) {
+        Resources res = application.getResources();
+        Configuration config = new Configuration();
+        config.setToDefaults();
+        res.updateConfiguration(config, res.getDisplayMetrics());
     }
 
     @Override

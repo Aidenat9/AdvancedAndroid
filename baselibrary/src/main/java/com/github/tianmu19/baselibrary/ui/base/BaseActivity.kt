@@ -1,12 +1,14 @@
 package com.github.tianmu19.baselibrary.ui.base
 
 import android.content.Context
+import android.os.Build
 import android.os.Bundle
 import android.os.IBinder
 import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_base.*
@@ -29,6 +31,7 @@ class BaseActivity : AppCompatActivity() {
      * 点击EditText时弹出软键盘，然后在点击空白处或者其他控件的时候隐藏软键盘。
      * 这个需求在平板电脑上非常实用，因为屏幕大，用户不可能每次都点左下角去隐藏，并且点击空白处更容易
      */
+    @RequiresApi(Build.VERSION_CODES.CUPCAKE)
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
         if(ev!!.action==MotionEvent.ACTION_DOWN){
             val view = currentFocus
@@ -40,6 +43,7 @@ class BaseActivity : AppCompatActivity() {
         return super.dispatchTouchEvent(ev)
     }
 
+    @RequiresApi(Build.VERSION_CODES.CUPCAKE)
     private fun hideSoftInput(windowToken: IBinder?) {
         if (windowToken != null) {
             val im = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
