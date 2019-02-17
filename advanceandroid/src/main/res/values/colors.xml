@@ -4,4 +4,39 @@
     <color name="colorPrimaryDark">#3FA862</color>
     <color name="colorAccent">#FF4081</color>
     <color name="white">#FFFFFF</color>
+
+    <color name="teal">#00796B</color>
+    <color name="brown">#8D6E63</color>
+    <color name="blue">#2196F3</color>
+    <color name="grey">#607D8B</color>
+    <color name="orange">#F57C00</color>
+    <!--分割线-->
+    <color name="colorLine">#EBEBEB</color>
+    <!--首页分割线-->
+    <color name="colorHomeLine">#D4D4D4</color>
+
+    <color name="colorLineDeep">#BBBBBB</color>
+
+    <!--item的分割线-->
+    <color name="colorLineItem">#FFDDDDDD</color>
+
+    <!--tab标签栏文字的颜色-->
+    <color name="colorTabText">#333333</color>
+    <!--正文文字颜色-->
+    <color name="colorContent">@color/color333333</color>
+    <color name="color333333">#ff333333</color>
+    <color name="color666">#ff666666</color>
+    <color name="color999">#ff999999</color>
+    <!--水波纹或5.0以下选择器颜色-->
+    <color name="tabBackground">#777D7D7D</color>
+    <!--item的水波纹颜色-->
+    <color name="itemBackground">#DD7D7D7D</color>
+    <!--item的5.0一下版本选择器颜色-->
+    <color name="itemLowBackground">#d9d9d9</color>
+
+    <!--透明色-->
+    <color name="colorTransparent">#00000000</color>
+    <!--半透明-->
+    <color name="colorBanTransparent">#11000000</color>
+
 </resources>
