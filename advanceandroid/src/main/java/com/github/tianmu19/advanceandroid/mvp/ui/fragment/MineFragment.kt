@@ -2,29 +2,24 @@ package com.github.tianmu19.advanceandroid.mvp.ui.fragment
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Message
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
-import com.jess.arms.base.BaseFragment
-import com.jess.arms.di.component.AppComponent
-import com.jess.arms.utils.ArmsUtils
-
+import com.github.tianmu19.advanceandroid.R
 import com.github.tianmu19.advanceandroid.di.component.DaggerMineComponent
 import com.github.tianmu19.advanceandroid.di.module.MineModule
 import com.github.tianmu19.advanceandroid.mvp.contract.MineContract
 import com.github.tianmu19.advanceandroid.mvp.presenter.MinePresenter
-
-import com.github.tianmu19.advanceandroid.R
+import com.jess.arms.base.BaseFragment
+import com.jess.arms.di.component.AppComponent
+import com.jess.arms.utils.ArmsUtils
 
 
 /**
  * ================================================
  * Description:
  * <p>
- * Created by MVPArmsTemplate on 02/15/2019 14:47
+ * Created by MVPArmsTemplate on 02/15/2019 21:47
  * <a href="mailto:jess.yan.effort@gmail.com">Contact me</a>
  * <a href="https://github.com/JessYanCoding">Follow me</a>
  * <a href="https://github.com/JessYanCoding/MVPArms">Star me</a>

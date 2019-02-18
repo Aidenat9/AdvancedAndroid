@@ -1,4 +1,4 @@
-package com.github.tianmu19.advanceandroid.mvp.model.api;
+package com.github.tianmu19.advanceandroid.mvp.api;
 
 /**
  * ================================================
@@ -10,9 +10,8 @@ package com.github.tianmu19.advanceandroid.mvp.model.api;
  * ================================================
  */
 public interface Api {
-
-    String APP_GANKIO = "http://gank.io/api/data/";
-    String APP_WANANDROID = "http://www.wanandroid.com/";
+   String API_GANKIO = "https://gank.io/api/";
+   String API_WAN_ANDROID = "http://www.wanandroid.com/";
 
 
 

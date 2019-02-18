@@ -1,14 +1,14 @@
 package com.github.tianmu19.advanceandroid.mvp.contract
 
-import com.jess.arms.mvp.IModel
 import com.jess.arms.mvp.IView
+import com.jess.arms.mvp.IModel
 
 
 /**
  * ================================================
  * Description:
  * <p>
- * Created by MVPArmsTemplate on 02/15/2019 09:47
+ * Created by MVPArmsTemplate on 02/15/2019 22:50
  * <a href="mailto:jess.yan.effort@gmail.com">Contact me</a>
  * <a href="https://github.com/JessYanCoding">Follow me</a>
  * <a href="https://github.com/JessYanCoding/MVPArms">Star me</a>

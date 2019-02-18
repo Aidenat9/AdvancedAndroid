@@ -4,12 +4,12 @@ import android.app.Application;
 import android.content.Context;
 import android.support.v4.app.FragmentManager;
 import com.github.tianmu19.advanceandroid.BuildConfig;
-import com.github.tianmu19.advanceandroid.mvp.model.api.Api;
+import com.github.tianmu19.advanceandroid.mvp.api.Api;
 import com.jess.arms.base.delegate.AppLifecycles;
 import com.jess.arms.di.module.GlobalConfigModule;
 import com.jess.arms.http.log.RequestInterceptor;
 import com.jess.arms.integration.ConfigModule;
-import me.jessyan.progressmanager.ProgressManager;
+import com.yangyan.xxp.yangyannew.app.YGlideImageLoaderStrategy;
 import me.jessyan.retrofiturlmanager.RetrofitUrlManager;
 
 import java.util.List;
@@ -39,8 +39,8 @@ public final class GlobalConfiguration implements ConfigModule {
         if (!BuildConfig.LOG_DEBUG) { //Release 时, 让框架不再打印 Http 请求和响应的信息
             builder.printHttpLogLevel(RequestInterceptor.Level.NONE);
         }
-
-        builder.baseurl(Api.APP_GANKIO)
+//基本地址是玩安卓的，gank数据的时候记得切换
+        builder.baseurl(Api.API_WAN_ANDROID)
                 //强烈建议自己自定义图片加载逻辑, 因为 arms-imageloader-glide 提供的 GlideImageLoaderStrategy 并不能满足复杂的需求
                 //请参考 https://github.com/JessYanCoding/MVPArms/wiki#3.4
                 .imageLoaderStrategy(new YGlideImageLoaderStrategy())
@@ -116,12 +116,12 @@ public final class GlobalConfiguration implements ConfigModule {
 //                    retrofitBuilder.addConverterFactory(FastJsonConverterFactory.create());//比如使用 FastJson 替代 Gson
                 })
                 .okhttpConfiguration((context1, okhttpBuilder) -> {//这里可以自己自定义配置 Okhttp 的参数
-//                    okhttpBuilder.sslSocketFactory(SSLSocketClient.getSSLSocketFactory(), SSLSocketClient.getTrustManager()); //支持 Https, 详情请百度
+//                    okhttpBuilder.sslSocketFactory(); //支持 Https, 详情请百度
                     okhttpBuilder.writeTimeout(12, TimeUnit.SECONDS);
                     //使用一行代码监听 Retrofit／Okhttp 上传下载进度监听, 以及 Glide 加载进度监听, 详细使用方法请查看 https://github.com/JessYanCoding/ProgressManager
-                    ProgressManager.getInstance().with(okhttpBuilder).build();
+//                    ProgressManager.getInstance().with(okhttpBuilder);
                     //让 Retrofit 同时支持多个 BaseUrl 以及动态改变 BaseUrl, 详细使用方法请查看 https://github.com/JessYanCoding/RetrofitUrlManager
-                    RetrofitUrlManager.getInstance().with(okhttpBuilder).build();
+                    RetrofitUrlManager.getInstance().with(okhttpBuilder);
                 })
                 .rxCacheConfiguration((context1, rxCacheBuilder) -> {//这里可以自己自定义配置 RxCache 的参数
                     rxCacheBuilder.useExpiredDataIfLoaderNotAvailable(true);

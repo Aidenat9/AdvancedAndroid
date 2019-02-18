@@ -1,4 +1,4 @@
-package com.github.tianmu19.advanceandroid.app
+package com.yangyan.xxp.yangyannew.app
 
 import android.content.Context
 import android.graphics.drawable.Drawable
@@ -21,6 +21,12 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
 
+/**
+ * Author : zhongwenpeng
+ * Email : 1340751953@qq.com
+ * Time :  2018/6/11
+ * Description :
+ */
 class YGlideImageLoaderStrategy : BaseImageLoaderStrategy<YImageConfig>, GlideAppliesOptions {
 
     override fun loadImage(ctx: Context?, config: YImageConfig?) {

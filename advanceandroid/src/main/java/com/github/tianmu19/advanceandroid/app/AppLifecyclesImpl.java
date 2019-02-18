@@ -64,9 +64,8 @@ public class AppLifecyclesImpl implements AppLifecycles {
 
     /**
      * 使其系统更改字体大小无效
-     * @param application
      */
-    private void initTextSize(Application application) {
+    private void initTextSize( Application application) {
         Resources res = application.getResources();
         Configuration config = new Configuration();
         config.setToDefaults();
