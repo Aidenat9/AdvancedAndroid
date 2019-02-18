@@ -25,9 +25,9 @@ interface CommonService {
      * 第几页：数字，大于0
      * eg: http://gank.io/api/data/Android/10/1
      */
-    @GET("data/{type}/{pre_page}/{page}")
-     fun getGankIoData(@Path("type") id: String, @Path("page") page: Int, @Path("pre_page") pre_page: Int): Observable<GankIoDataBean>
-
+    @Headers("Domain-Name:gank")
+    @GET("/api/data/{type}/10/{page}")
+     fun getGankIoData(@Path("type") id: String, @Path("page") page: Int): Observable<GankIoDataBean>
 
     /**
      * 玩安卓，文章列表、知识体系下的文章
@@ -35,7 +35,7 @@ interface CommonService {
      * @param page 页码，从0开始
      * @param cid  体系id
      */
-    @GET("article/list/{page}/json")
+    @GET("/article/list/{page}/json")
      fun getHomeList(@Path("page") page: Int, @Query("cid") cid: Int?): Observable<WanListBean>
 
     /**
@@ -45,20 +45,20 @@ interface CommonService {
      * @param password 密码
      */
     @FormUrlEncoded
-    @POST("user/login")
+    @POST("/user/login")
     abstract fun login(@Field("username") username: String, @Field("password") password: String): Observable<LoginBean>
 
     /**
      * 玩安卓注册
      */
     @FormUrlEncoded
-    @POST("user/register")
+    @POST("/user/register")
     abstract fun register(@Field("username") username: String, @Field("password") password: String, @Field("repassword") repassword: String): Observable<LoginBean>
 
     /**
      * 退出
      */
-    @GET("user/logout/json")
+    @GET("/user/logout/json")
     abstract fun logout(): Observable<LoginBean>
 
     /**
@@ -66,7 +66,7 @@ interface CommonService {
      *
      * @param page 页码
      */
-    @GET("lg/collect/list/{page}/json")
+    @GET("/lg/collect/list/{page}/json")
     abstract fun getCollectList(@Path("page") page: Int): Observable<WanListBean>
 
     /**
@@ -74,7 +74,7 @@ interface CommonService {
      *
      * @param id 文章id
      */
-    @POST("lg/collect/{id}/json")
+    @POST("/lg/collect/{id}/json")
     abstract fun collect(@Path("id") id: Int): Observable<WanListBean>
 
     /**
@@ -82,7 +82,7 @@ interface CommonService {
      *
      * @param id 文章id
      */
-    @POST("lg/uncollect_originId/{id}/json")
+    @POST("/lg/uncollect_originId/{id}/json")
     abstract fun unCollectOrigin(@Path("id") id: Int): Observable<WanListBean>
 
     /**
@@ -94,13 +94,13 @@ interface CommonService {
      * 但是收藏支持主动添加，这种情况下，没有originId则为-1)
      */
     @FormUrlEncoded
-    @POST("lg/uncollect/{id}/json")
+    @POST("/lg/uncollect/{id}/json")
     abstract fun unCollect(@Path("id") id: Int, @Field("originId") originId: Int): Observable<WanListBean>
 
     /**
      * 体系数据
      */
-    @GET("tree/json")
+    @GET("/tree/json")
     abstract fun getTree(): Observable<TreeBean>
 
     /**
@@ -110,7 +110,7 @@ interface CommonService {
      * @param link 链接
      */
     @FormUrlEncoded
-    @POST("lg/collect/addtool/json")
+    @POST("/lg/collect/addtool/json")
     abstract fun collectUrl(@Field("name") name: String, @Field("link") link: String): Observable<WanListBean>
 
     /**
@@ -120,7 +120,7 @@ interface CommonService {
      * @param link 链接
      */
     @FormUrlEncoded
-    @POST("lg/collect/updatetool/json")
+    @POST("/lg/collect/updatetool/json")
     abstract fun updateUrl(@Field("id") id: Int, @Field("name") name: String, @Field("link") link: String): Observable<WanListBean>
 
     /**
@@ -129,20 +129,20 @@ interface CommonService {
      * @param id 收藏网址id
      */
     @FormUrlEncoded
-    @POST("lg/collect/deletetool/json")
+    @POST("/lg/collect/deletetool/json")
     abstract fun unCollectUrl(@Field("id") id: Int): Observable<WanListBean>
 
 
     /**
      * 收藏网站列表
      */
-    @GET("lg/collect/usertools/json")
+    @GET("/lg/collect/usertools/json")
     abstract fun getCollectUrlList(): Observable<CollectUrlBean>
 
     /**
      * 导航数据
      */
-    @GET("navi/json")
+    @GET("/navi/json")
     abstract fun getNaviJson(): Observable<NaviJsonBean>
 
 

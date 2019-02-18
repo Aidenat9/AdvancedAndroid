@@ -3,11 +3,16 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
+    <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/mSwipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
     <android.support.v7.widget.RecyclerView android:layout_width="match_parent"
                                             android:id="@+id/rv_drycargo"
                                             android:scrollbarFadeDuration="1"
                                             android:scrollbarSize="4dp"
                                             android:scrollbarThumbVertical="@color/tabBackground"
                                             android:layout_height="match_parent"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </LinearLayout>

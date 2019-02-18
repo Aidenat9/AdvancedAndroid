@@ -60,8 +60,8 @@ class HomeActivity : BaseActivity<HomePresenter>(), HomeContract.View , BottomNa
 
 
     override fun initData(savedInstanceState: Bundle?) {
-        setupPages()
         initViewPager()
+        setupPages()
     }
 
     private fun initViewPager() {
@@ -78,6 +78,8 @@ class HomeActivity : BaseActivity<HomePresenter>(), HomeContract.View , BottomNa
             override fun onPageScrollStateChanged(p0: Int) {
             }
         })
+        //缓存4个页面，
+        viewpager.offscreenPageLimit = 4
 
     }
 

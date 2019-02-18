@@ -11,7 +11,7 @@ import android.support.v4.app.FragmentPagerAdapter
  *包名：com.github.tianmu19.advanceandroid.mvp.ui.adapter
  *<p>description:            </p>
  */
-class HomePagerAdapter(val mDatas: List<Fragment>,val fragmentManager:FragmentManager) : FragmentPagerAdapter(fragmentManager) {
+class HomePagerAdapter(private val mDatas: List<Fragment>, fragmentManager:FragmentManager) : FragmentPagerAdapter(fragmentManager) {
     override fun getItem(p0: Int): Fragment {
         return mDatas[p0]
     }

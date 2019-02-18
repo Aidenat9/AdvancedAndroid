@@ -10,8 +10,8 @@ package com.github.tianmu19.advanceandroid.mvp.api;
  * ================================================
  */
 public interface Api {
-   String API_GANKIO = "https://gank.io/api/";
-   String API_WAN_ANDROID = "http://www.wanandroid.com/";
+   String API_GANKIO = "https://gank.io";
+   String API_WAN_ANDROID = "http://www.wanandroid.com";
 
 
 

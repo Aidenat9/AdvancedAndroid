@@ -1,4 +1,4 @@
-package com.github.tianmu19.advanceandroid.mvp.model.entity.drycargo
+package com.github.tianmu19.advanceandroid.mvp.model.entity.wanandroid
 
 import com.github.tianmu19.advanceandroid.mvp.model.entity.wanandroid.article.DataX
 

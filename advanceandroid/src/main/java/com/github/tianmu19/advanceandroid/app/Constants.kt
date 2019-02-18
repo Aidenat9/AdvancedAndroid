@@ -9,5 +9,13 @@ package com.github.tianmu19.advanceandroid.app
  */
 object Constants {
     val NIGHT_SKIN = "night.skin"
-    val KEY_MODE_NIGHT = "mode-night"
+    @JvmField
+     val KEY_MODE_NIGHT = "mode-night"
+    // 是否登录
+    @JvmField
+    var IS_LOGIN = "is_login"
+    // 是否第一次收藏网址
+    @JvmField
+    var IS_FIRST_COLLECTURL = "isFirstCollectUrl"
+
 }

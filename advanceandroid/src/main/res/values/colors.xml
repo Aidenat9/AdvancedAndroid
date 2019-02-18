@@ -23,8 +23,8 @@
     <!--tab标签栏文字的颜色-->
     <color name="colorTabText">#333333</color>
     <!--正文文字颜色-->
-    <color name="colorContent">@color/color333333</color>
-    <color name="color333333">#ff333333</color>
+    <color name="colorContent">@color/color333</color>
+    <color name="color333">#ff333333</color>
     <color name="color666">#ff666666</color>
     <color name="color999">#ff999999</color>
     <!--水波纹或5.0以下选择器颜色-->

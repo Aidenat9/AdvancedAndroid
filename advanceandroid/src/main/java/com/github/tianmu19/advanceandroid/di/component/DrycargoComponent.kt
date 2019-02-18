@@ -1,19 +1,17 @@
 package com.github.tianmu19.advanceandroid.di.component
 
-import dagger.Component
+import com.github.tianmu19.advanceandroid.di.module.DryCargoModule
+import com.github.tianmu19.advanceandroid.mvp.ui.fragment.DryCargoFragment
 import com.jess.arms.di.component.AppComponent
-
-import com.github.tianmu19.advanceandroid.di.module.DrycargoModule
-
 import com.jess.arms.di.scope.FragmentScope
-import com.github.tianmu19.advanceandroid.mvp.ui.fragment.DrycargoFragment
+import dagger.Component
 
 
 /**
  * ================================================
  * Description:
  * <p>
- * Created by MVPArmsTemplate on 02/15/2019 14:46
+ * Created by MVPArmsTemplate on 02/15/2019 21:46
  * <a href="mailto:jess.yan.effort@gmail.com">Contact me</a>
  * <a href="https://github.com/JessYanCoding">Follow me</a>
  * <a href="https://github.com/JessYanCoding/MVPArms">Star me</a>
@@ -22,7 +20,7 @@ import com.github.tianmu19.advanceandroid.mvp.ui.fragment.DrycargoFragment
  * ================================================
  */
 @FragmentScope
-@Component(modules = arrayOf(DrycargoModule::class), dependencies = arrayOf(AppComponent::class))
-interface DrycargoComponent {
-    fun inject(fragment: DrycargoFragment)
+@Component(modules = arrayOf(DryCargoModule::class), dependencies = arrayOf(AppComponent::class))
+interface DryCargoComponent {
+    fun inject(fragment: DryCargoFragment)
 }
