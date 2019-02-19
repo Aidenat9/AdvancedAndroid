@@ -22,7 +22,7 @@ class DryCargoAdapter(val datas: MutableList<Result>) :
     override fun convert(helper: BaseViewHolder?, item: Result?) {
         helper!!.getView<ImageView>(R.id.iv_android_pic).apply {
             post {
-                if(null!=item?.images&&item?.images.size>0){
+                if(null!=item?.images&& item.images.isNotEmpty()){
                     loadImage(
                         YImageConfig.Builder()
                             .bitmapTransformation(RoundedCornersTransformation(10, 0))

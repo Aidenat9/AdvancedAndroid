@@ -55,6 +55,7 @@ public class ActivityLifecycleCallbacksImpl implements Application.ActivityLifec
                 });
             }
         }
+
     }
 
     @Override

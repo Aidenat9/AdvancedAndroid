@@ -13,7 +13,16 @@ android {
     
     useLibrary 'org.apache.http.legacy'
 
-
+    packagingOptions {//加上这些代码
+        pickFirst 'lib/arm64-v8a/libRSSupport.so'
+        pickFirst 'lib/armeabi-v7a/librsjni.so'
+        pickFirst 'lib/x86/libRSSupport.so'
+        pickFirst  'lib/armeabi-v7a/libRSSupport.so'
+        pickFirst 'lib/x86_64/libRSSupport.so'
+        pickFirst 'lib/x86_64/librsjni.so'
+        pickFirst 'lib/arm64-v8a/librsjni.so'
+        pickFirst 'lib/x86/librsjni.so'
+    }
 
     defaultConfig {
         applicationId "com.github.tianmu19.advanceandroid"
@@ -57,6 +66,7 @@ android {
         disable "ResourceType"
         abortOnError false
     }
+
 }
 
 dependencies {
@@ -104,5 +114,5 @@ dependencies {
     implementation 'com.davemorrissey.labs:subsampling-scale-image-view:3.10.0'
     implementation 'com.just.agentweb:agentweb:4.0.2' // (必选)
     implementation 'me.drakeet.support:toastcompat:1.1.0'
-
+    implementation 'io.alterac.blurkit:blurkit:1.1.0'
 }
