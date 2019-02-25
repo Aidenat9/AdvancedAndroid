@@ -7,7 +7,6 @@ import com.github.tianmu19.advanceandroid.R
 import com.github.tianmu19.advanceandroid.app.loadImage
 import com.github.tianmu19.advanceandroid.mvp.model.entity.gank.Result
 import com.yangyan.xxp.yangyannew.app.YImageConfig
-import jp.wasabeef.glide.transformations.BlurTransformation
 import timber.log.Timber
 
 /**
@@ -24,7 +23,9 @@ class MeizhiAdapter (val datas: MutableList<Result>):BaseQuickAdapter<Result,Bas
                 Timber.e("url  "+item?.url +"datas.size:  "+datas.size)
                 if(item?.url!=null&& (item.url.endsWith("jpg")||item.url.endsWith("png")||item.url.endsWith("gif"))){
                     loadImage(YImageConfig.Builder()
-                        .url(item.url).imageView(this).bitmapTransformation(BlurTransformation(10))
+                        .url(item.url).imageView(this)
+                        .blurValue(2)
+                        .resize(400,500)
                         .placeholder(R.drawable.loading_meizhi).build())
                 }
 

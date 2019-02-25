@@ -1,6 +1,6 @@
 package com.github.tianmu19.advanceandroid.di.module
 
-import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.StaggeredGridLayoutManager
 import com.github.tianmu19.advanceandroid.mvp.contract.MeizhiContract
 import com.github.tianmu19.advanceandroid.mvp.model.MeizhiModel
 import com.github.tianmu19.advanceandroid.mvp.model.entity.gank.Result
@@ -38,7 +38,7 @@ class MeizhiModule(private val view: MeizhiContract.View) {
     }
     @FragmentScope
     @Provides
-    internal fun provideLayoutManager() = LinearLayoutManager(view.getContext())
+    internal fun provideLayoutManager() = StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
     @FragmentScope
     @Provides
     internal fun provideDatas() = mutableListOf<Result>()
