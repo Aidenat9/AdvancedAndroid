@@ -1,12 +1,13 @@
 package com.github.tianmu19.advanceandroid.di.module
 
-import com.jess.arms.di.scope.FragmentScope
-
-import dagger.Module
-import dagger.Provides
-
+import android.support.v7.widget.LinearLayoutManager
 import com.github.tianmu19.advanceandroid.mvp.contract.MeizhiContract
 import com.github.tianmu19.advanceandroid.mvp.model.MeizhiModel
+import com.github.tianmu19.advanceandroid.mvp.model.entity.gank.Result
+import com.github.tianmu19.advanceandroid.mvp.ui.adapter.MeizhiAdapter
+import com.jess.arms.di.scope.FragmentScope
+import dagger.Module
+import dagger.Provides
 
 
 /**
@@ -35,4 +36,14 @@ class MeizhiModule(private val view: MeizhiContract.View) {
     fun provideMeizhiModel(model: MeizhiModel): MeizhiContract.Model {
         return model
     }
+    @FragmentScope
+    @Provides
+    internal fun provideLayoutManager() = LinearLayoutManager(view.getContext())
+    @FragmentScope
+    @Provides
+    internal fun provideDatas() = mutableListOf<Result>()
+    @FragmentScope
+    @Provides
+    internal fun provideAdapter(datas:MutableList<Result>) = MeizhiAdapter(datas)
+
 }

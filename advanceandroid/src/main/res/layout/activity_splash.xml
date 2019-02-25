@@ -2,21 +2,22 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
+             android:background="#ebebeb"
               android:layout_height="match_parent">
     <ImageView
             android:id="@+id/mIvSplash"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop" android:contentDescription="@string/app_name"/>
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY" android:contentDescription="@string/app_name"/>
 
 
 
-    <io.alterac.blurkit.BlurLayout android:layout_width="match_parent"
-                                   android:layout_height="match_parent"
-                                   android:id="@+id/blurLayout"
-                                   app:blk_blurRadius="10"
-                                   app:blk_downscaleFactor="0.09"
-                                   app:blk_fps="0"/>
+    <!--<io.alterac.blurkit.BlurLayout android:layout_width="match_parent"-->
+                                   <!--android:layout_height="match_parent"-->
+                                   <!--android:id="@+id/blurLayout"-->
+                                   <!--app:blk_blurRadius="10"-->
+                                   <!--app:blk_downscaleFactor="0.09"-->
+                                   <!--app:blk_fps="0"/>-->
     <com.airbnb.lottie.LottieAnimationView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

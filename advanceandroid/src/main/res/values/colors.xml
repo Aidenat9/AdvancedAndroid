@@ -5,11 +5,11 @@
     <color name="colorAccent">#FF4081</color>
     <color name="white">#FFFFFF</color>
 
-    <color name="teal">#00796B</color>
-    <color name="brown">#8D6E63</color>
-    <color name="blue">#2196F3</color>
+    <color name="teal">#0E5CAD</color>
+    <color name="brown">#002661</color>
+    <color name="blue">#09203F</color>
     <color name="grey">#607D8B</color>
-    <color name="orange">#F57C00</color>
+    <color name="orange">#623aa2</color>
     <!--分割线-->
     <color name="colorLine">#EBEBEB</color>
     <!--首页分割线-->

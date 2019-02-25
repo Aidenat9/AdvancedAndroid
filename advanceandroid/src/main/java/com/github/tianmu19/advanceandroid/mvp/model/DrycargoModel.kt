@@ -36,7 +36,7 @@ constructor(repositoryManager: IRepositoryManager) : BaseModel(repositoryManager
 
     override fun getDryCargoData(type: String, page: Int): Observable<GankIoDataBean> {
         // You can change BaseUrl at any time while App is running (The interface that declared the Domain-Name header)
-        RetrofitUrlManager.getInstance().putDomain("gank",Api.API_GANKIO)
+        RetrofitUrlManager.getInstance().putDomain("gank", Api.API_GANKIO)
         return mRepositoryManager.obtainCacheService(CacheCommonService::class.java)
             .getGankioData(
                 mRepositoryManager.obtainRetrofitService(CommonService::class.java)
@@ -45,11 +45,11 @@ constructor(repositoryManager: IRepositoryManager) : BaseModel(repositoryManager
     }
 
     @Inject
-    lateinit var mGson: Gson;
+    lateinit var mGson: Gson
     @Inject
-    lateinit var mApplication: Application;
+    lateinit var mApplication: Application
 
     override fun onDestroy() {
-        super.onDestroy();
+        super.onDestroy()
     }
 }

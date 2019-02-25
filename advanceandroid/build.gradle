@@ -115,4 +115,7 @@ dependencies {
     implementation 'com.just.agentweb:agentweb:4.0.2' // (必选)
     implementation 'me.drakeet.support:toastcompat:1.1.0'
     implementation 'io.alterac.blurkit:blurkit:1.1.0'
+    implementation 'com.google.android:flexbox:1.1.0'
+
+    
 }

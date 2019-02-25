@@ -22,19 +22,25 @@
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning"
             tools:targetApi="n">
-        <meta-data
-                android:name="android.max_aspect"
-                android:value="2.4"/>
-        <activity android:name=".mvp.ui.activity.SplashActivity"
-                  android:screenOrientation="portrait">
+
+         <meta-data
+         android:name="android.max_aspect"
+         android:value="2.4"/>
+         <!--华为刘海屏-->
+         <meta-data android:name="android.notch_support" android:value="false"/>
+         <!--小米是否使用耳朵区-->
+         <meta-data
+         android:name="notch.config"
+         android:value="none"/>
+        <activity
+                android:name=".mvp.ui.activity.SplashActivity"
+                android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
-
         <activity
                 android:name=".mvp.ui.activity.HomeActivity"
                 android:launchMode="singleTask"

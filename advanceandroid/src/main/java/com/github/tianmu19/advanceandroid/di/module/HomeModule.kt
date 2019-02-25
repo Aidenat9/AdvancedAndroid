@@ -3,7 +3,7 @@ package com.github.tianmu19.advanceandroid.di.module
 import com.github.tianmu19.advanceandroid.mvp.contract.HomeContract
 import com.github.tianmu19.advanceandroid.mvp.model.HomeModel
 import com.github.tianmu19.advanceandroid.mvp.ui.fragment.DryCargoFragment
-import com.github.tianmu19.advanceandroid.mvp.ui.fragment.GirlFragment
+import com.github.tianmu19.advanceandroid.mvp.ui.fragment.MeizhiFragment
 import com.github.tianmu19.advanceandroid.mvp.ui.fragment.MineFragment
 import com.github.tianmu19.advanceandroid.mvp.ui.fragment.WanAndroidFragment
 import com.jess.arms.di.scope.ActivityScope
@@ -43,7 +43,7 @@ class HomeModule(private val view: HomeContract.View) {
 
     @ActivityScope
     @Provides
-    internal fun provideGirlFragment()= GirlFragment()
+    internal fun provideGirlFragment()= MeizhiFragment()
 
     @ActivityScope
     @Provides

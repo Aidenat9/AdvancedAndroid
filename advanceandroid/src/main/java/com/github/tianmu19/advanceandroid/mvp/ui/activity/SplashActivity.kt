@@ -6,13 +6,13 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.View
-import android.view.WindowManager
 import com.github.tianmu19.advanceandroid.R
 import com.github.tianmu19.advanceandroid.di.component.DaggerSplashComponent
 import com.github.tianmu19.advanceandroid.di.module.SplashModule
 import com.github.tianmu19.advanceandroid.mvp.contract.SplashContract
 import com.github.tianmu19.advanceandroid.mvp.presenter.SplashPresenter
-import com.jess.arms.base.BaseActivity
+import com.github.tianmu19.advanceandroid.mvp.ui.ABaseActivity
+import com.github.tianmu19.advanceandroid.utils.NotchSupportUtil
 import com.jess.arms.di.component.AppComponent
 import com.jess.arms.utils.ArmsUtils
 import kotlinx.android.synthetic.main.activity_splash.*
@@ -43,7 +43,7 @@ import kotlinx.android.synthetic.main.activity_splash.*
  * }
  * }
  */
-class SplashActivity : BaseActivity<SplashPresenter>(), SplashContract.View {
+class SplashActivity : ABaseActivity<SplashPresenter>(), SplashContract.View {
     override fun getContext(): Context {
         return this
     }
@@ -65,21 +65,21 @@ class SplashActivity : BaseActivity<SplashPresenter>(), SplashContract.View {
 
     @TargetApi(Build.VERSION_CODES.P)
     override fun initData(savedInstanceState: Bundle?) {
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN and View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-        var lp = window.attributes
-        lp.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES
-        window.attributes = lp
+        if(NotchSupportUtil.hasNotch(getContext())){
+            window.decorView.systemUiVisibility =
+                View.SYSTEM_UI_FLAG_FULLSCREEN and View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+        }
         mIvSplash.apply { setImageResource(R.drawable.bg_spalsh) }
         mPresenter?.delayOpenHome()
     }
 
     override fun onStart() {
         super.onStart()
-        blurLayout.startBlur()
+//        blurLayout.startBlur()
     }
 
     override fun onStop() {
-        blurLayout.pauseBlur();
+//        blurLayout.pauseBlur()
         super.onStop()
     }
 

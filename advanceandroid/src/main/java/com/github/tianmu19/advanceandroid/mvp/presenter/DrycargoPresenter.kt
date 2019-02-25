@@ -91,8 +91,4 @@ constructor(model: DryCargoContract.Model, rootView: DryCargoContract.View) :
 
     }
 
-
-    override fun onDestroy() {
-        super.onDestroy()
-    }
 }

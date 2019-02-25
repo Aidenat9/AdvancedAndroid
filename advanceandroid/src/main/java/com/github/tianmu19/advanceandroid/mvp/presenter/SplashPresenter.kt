@@ -46,7 +46,7 @@ constructor(model: SplashContract.Model, rootView: SplashContract.View) :
         super.onDestroy()
     }
     fun delayOpenHome(){
-        Observable.timer(3, TimeUnit.SECONDS)
+        Observable.timer(5, TimeUnit.SECONDS)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe { mRootView.getContext().startActivity<HomeActivity>()
             mRootView.killMyself()}
