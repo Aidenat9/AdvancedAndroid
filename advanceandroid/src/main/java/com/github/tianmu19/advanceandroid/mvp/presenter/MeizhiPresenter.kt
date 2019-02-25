@@ -46,7 +46,7 @@ constructor(model: MeizhiContract.Model, rootView: MeizhiContract.View) :
     @Inject
     lateinit var mAdapter :MeizhiAdapter
     @Inject
-    lateinit var datas:MutableList<Result>
+    lateinit var mDatas:MutableList<Result>
     /**
      * 页数是从 1开始的
      */
@@ -76,12 +76,12 @@ constructor(model: MeizhiContract.Model, rootView: MeizhiContract.View) :
                 override fun onNext(t: GankIoDataBean) {
                     mPageIndex++
                     if(pullToRefresh){
-                        datas.clear()
-                        datas.addAll(t.results)
+                        mDatas.clear()
+                        mDatas.addAll(t.results)
                         mAdapter.notifyDataSetChanged()
                     }else{
-                        datas.addAll(t.results)
-                        mAdapter.notifyItemRangeChanged(datas.size - t.results.size, datas.size)
+                        mDatas.addAll(t.results)
+                        mAdapter.notifyItemRangeChanged(mDatas.size - t.results.size, mDatas.size)
                         mAdapter.loadMoreComplete()
                     }
                 }

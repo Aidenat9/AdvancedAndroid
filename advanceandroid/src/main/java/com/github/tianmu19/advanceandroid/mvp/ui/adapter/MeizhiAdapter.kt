@@ -17,7 +17,7 @@ import timber.log.Timber
  *包名：com.github.tianmu19.advanceandroid.mvp.ui.adapter
  *<p>description:            </p>
  */
-class MeizhiAdapter (val datas: MutableList<Result>):BaseQuickAdapter<Result,BaseViewHolder>(R.layout.item_meizhi) {
+class MeizhiAdapter (val datas: MutableList<Result>):BaseQuickAdapter<Result,BaseViewHolder>(R.layout.item_meizhi,datas) {
     override fun convert(helper: BaseViewHolder?, item: Result?) {
         helper!!.getView<ImageView>(R.id.iv_meizhi).apply {
             post {
